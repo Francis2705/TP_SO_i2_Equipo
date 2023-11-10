@@ -1,7 +1,69 @@
 Pirolo Juan Francisco
 Martinez Balian Francisco
 
-A)
-B)
-C) Sí, GAMMA puede actualizar su fork siguiendo el mismo procedimiento que ALFA en la pregunta B.
+A) Para actualizar mi repositorio al estado que esté del repo que hice fork, 
+tuve que hacer un “git remote add beta (url del repo de beta)” para que me sincronice 
+mi repo local con el original. Luego hice un “git fetch beta” para obtener las 
+actualizaciones del repo de beta y después tuve que hacer un “git rebase beta/main” 
+para actualizar mi repo local y que ahora sí aparezcan los nuevos cambios. 
+Por último tuve que hacer un “git pull” para subir los cambios que ya existían 
+anteriormente, y luego un “git push” para subir todo al repo de github.
+
+B) Si, ALFA puede actualizar su fork al estado del fork de GAMMA de manera similar 
+a como se explicó en el punto A.
+
+C) Sí, GAMMA puede actualizar su fork siguiendo el mismo procedimiento que ALFA en 
+la pregunta B.
+
 D) No se pierden. El pull solo trae los cambios realizados en el repositorio original.
+
+E) 
+Interacción de BETA:
+
+  255  cd /c/Users/profe/Desktop/TP_SO_i2_Equipo-main/TP_SO_i2_Equipo-main
+  256  git clone https://github.com/JuanFranciscoPirolo/TP_SO_i2_Equipo.git
+  257  cd '/c/Users/profe/Desktop/Carpetas de GitHub/TP_SO_i2_Equipo-main'
+  258  git clone https://github.com/JuanFranciscoPirolo/TP_SO_i2_Equipo.git
+  259  cd TP_SO_i2_Equipo
+  260  nano NuevoDato.txt
+  261  git status
+  262  git add NuevoDato.txt
+  263  git commit -m "Agregar NuevoDato.txt"
+  264  git push origin master
+  265  git push origin main
+
+
+Interacción de ALFA y GAMMA (son el mismo):
+
+  490  cd /c/Users/franc/Desktop/carpetas_de_github
+  491  git clone https://github.com/Francis2705/TP_SO_i2_Equipo.git
+  492  cd /c/Users/franc/Desktop/carpetas_de_github/TP_SO_i2_Equipo
+  493  git status
+  494  git add .
+  495  git commit -m "agregado de gamma (que también soy alfa)"
+  496  git push
+  497  git status
+  498  git add .
+  499  git commit -m "agregado de alfa (siendo alfa)"
+  500  git push
+  501  cd /c/Users/franc/Desktop/carpetas_de_github/TP_SO_i2_Equipo
+  502  git remote add beta https://github.com/JuanFranciscoPirolo/TP_SO_i2_Equipo.git
+  503  git fetch beta
+  504  git rebase beta/main
+  505  git status
+  506  git push origin main
+  507  git pull
+  508  git status
+  509  git push
+  510  git status
+  511  git status
+
+  Aqui BETA creó el nuevo archivo solicitado desde el github
+
+  Antes del siguiente paso, se realizó una sincronización de fork desde github ↓
+
+  512  git remote add alfa https://github.com/Francis2705/TP_SO_i2_Equipo.git
+  513  git fetch alfa
+  514  git rebase alfa/main
+  515  git status
+  516  history
